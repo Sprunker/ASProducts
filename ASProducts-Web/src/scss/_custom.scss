@@ -1,0 +1,516 @@
+.fs-40 { font-size: 40px !important; }
+.w-54 { width: 54px !important; }
+
+body {
+  font-family: $font-family-base;
+  background-color: $body-bg;
+  color: $body-color;
+
+  background-image: radial-gradient(#c0c0c0 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.main-content {
+  padding: 1rem 0;
+}
+
+.btn {
+  text-decoration: none;
+  color: black;
+  border: $border-xs;
+  box-shadow: $box-shadow-xs;
+  background-color: $custom-white;
+  transform: translate(-1px, -1px);
+  padding: 8px;
+
+  &:active {
+    transform: translate(0px,0px);
+    box-shadow: none;
+  }
+
+  &:hover {
+    color: black;
+    border: $border-xs;
+    background-color: $bg-button-hover;
+  }
+}
+
+.btn-xs {
+  text-decoration: none;
+  color: black;
+  border: $border-xs;
+  box-shadow: $box-shadow-xs;
+  background-color: $custom-white;
+  transform: translate(-1px, -1px);
+  padding: 8px;
+
+  &:active {
+    transform: translate(0px,0px);
+    box-shadow: none;
+  }
+
+  &:hover {
+    color: black;
+    border: $border-xs;
+    background-color: $bg-button-hover;
+  }
+}
+
+.btn-sm {
+  text-decoration: none;
+  color: black;
+  border: $border-sm;
+  box-shadow: $box-shadow-sm;
+  background-color: $custom-white;
+  transform: translate(-1px, -1px);
+  padding: 8px 12px;
+
+  &:active {
+    transform: translate(0px, 0px);
+    box-shadow: none;
+  }
+
+  &:hover {
+    color: black;
+    border: $border-sm;
+    background-color: $bg-button-hover;
+  }
+}
+
+.btn-danger:hover {
+  background-color: $bg-button-danger-hover;
+}
+
+.page-heading {
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.page-header__actions,
+.product-detail__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.loading-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.product-card-placeholder .placeholder {
+  background-color: $custom-placeholder;
+}
+
+.product-card-placeholder .placeholder-glow .placeholder {
+  animation: placeholder-glow 2s ease-in-out infinite;
+}
+
+.notify-message {
+  border: $border-sm;
+  border-color: $primary;
+  box-shadow: 3px 3px 0 $primary;
+}
+
+.error-message {
+  border: $border-sm;
+  border-color: $danger;
+  background-color: $bg-button-danger-hover;
+  box-shadow: 3px 3px 0 $danger;
+}
+
+.app-navbar__links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  cursor: pointer;
+  margin-top: 1rem;
+  padding: 4px 12px;
+  background: #fff;
+  border: $border-sm;
+  box-shadow: $box-shadow-sm;
+  transform: translate(-2px, -2px);
+
+  &:active {
+    transform: translate(0px, 0px);
+    box-shadow: none;
+  }
+}
+
+.confirm-modal .modal-content {
+  border: $border-md;
+  box-shadow: $box-shadow-md;
+}
+
+.image-uploader {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .form-label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  &__dropzone {
+    flex: 1;
+    align-self: center;
+    width: auto;
+    height: 100%;
+    padding: 1rem;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: $border-md;
+    box-shadow: $box-shadow-md;
+    background-color: $custom-white;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: $box-shadow-md-hover;
+    }
+
+    &.is-dragging {
+      background-color: $custom-placeholder;
+      transform: translate(-2px, -2px);
+      box-shadow: $box-shadow-md-hover;
+    }
+
+    &.is-invalid {
+      border-color: $danger;
+      box-shadow: 5px 5px $danger;
+    }
+  }
+
+  &__placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    text-align: center;
+    color: $secondary;
+    pointer-events: none;
+  }
+
+  &__title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: $body-color;
+  }
+
+  &__hint {
+    font-size: 0.9rem;
+  }
+
+  &__preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__input {
+    display: none;
+  }
+}
+
+.product-card {
+  border: $border-md;
+  box-shadow: $box-shadow-md;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    min-height: 1px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: auto;
+  }
+
+  &__actions .btn {
+    flex: 1;
+  }
+
+  &__badge {
+    background-color: $custom-white;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border: 2px solid black;
+  }
+
+  &__title {
+    margin-bottom: 0.5rem;
+  }
+
+  &__company {
+    margin-bottom: 0.25rem;
+    color: $secondary;
+    font-size: 0.95rem;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    padding: 12px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: $box-shadow-md-hover;
+  }
+}
+
+.product-form-placeholder .placeholder {
+  background-color: $custom-placeholder;
+}
+
+.product-form {
+  border: $border-md;
+  box-shadow: $box-shadow-md;
+  background-color: $custom-white;
+  padding: 2rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__back {
+    text-decoration: none;
+    color: $body-color;
+    font-weight: 600;
+    font-size: 0.9rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: minmax(220px, 360px) 1fr;
+    gap: 2rem;
+
+    @media (max-width: 767.98px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__image-col {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__fields-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  &__row {
+    display: flex;
+    gap: 1.25rem;
+
+    .product-form__group {
+      flex: 1;
+    }
+
+    @media (max-width: 575.98px) {
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+  }
+
+  &__group {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+
+    .form-label {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-control {
+      border: $border-sm;
+      box-shadow: $box-shadow-sm;
+
+      &:focus {
+        box-shadow: $box-shadow-sm;
+        border-color: #000;
+      }
+    }
+
+    .input-group-text {
+      border: $border-sm;
+      box-shadow: $box-shadow-sm;
+      border-right: none;
+      background-color: $custom-white;
+      font-weight: 600;
+    }
+  }
+
+  * > .is-invalid {
+    border-color: $danger;
+    box-shadow: 3px 3px $danger;
+  }
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.invalid-feedback {
+  position: absolute;
+  bottom: -1.5rem;
+}
+
+.product-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 576px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) {
+  .product-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.product-detail-placeholder .placeholder {
+  background-color: $custom-placeholder;
+}
+
+.product-detail {
+  border: $border-md;
+  box-shadow: $box-shadow-md;
+  background-color: $custom-white;
+  padding: 2rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  &__back {
+    text-decoration: none;
+    color: $body-color;
+    font-weight: 600;
+    font-size: 0.9rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: minmax(220px, 360px) 1fr;
+    gap: 2rem;
+
+    @media (max-width: 767.98px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: $custom-white;
+    border: $border-md;
+    box-shadow: $box-shadow-md;
+    overflow: hidden;
+    padding: 16px;
+  }
+
+  &__image-el {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+
+  &__company {
+    color: $secondary;
+    margin-bottom: 0.5rem;
+  }
+
+  &__price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  &__age-badge {
+    align-self: flex-start;
+    background-color: $custom-white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    border: 2px solid black;
+    margin-bottom: 0.75rem;
+  }
+
+  &__description {
+    color: $body-color;
+    line-height: 1.5;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+}
